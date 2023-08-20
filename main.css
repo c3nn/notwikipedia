@@ -62,6 +62,7 @@ h3{
 }
 p{
 	letter-spacing: 0px;
+	color: var(--accent);
 	font-style: normal;
 	font-size: 20px;
 	font-family: "DM Serif Text";
