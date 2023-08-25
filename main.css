@@ -7,11 +7,39 @@
 :root{
 	--bg: #111111;
 	--bg-light: #1d1d1d;
-	/* --accent-colorized: #eddede; */
 	--accent: #eddede;
+	/* --accent-colorized: #eddede; */
+	--link: #4444dd;
+	--red: #bb0909;
 	background: var(--bg-light);
 	color: var(--accent);
 }
+@media (prefers-contrast: more) {
+	:root{
+		--bg: #000000;
+		--bg-light: #ffffff;
+		--accent: #ffffff;
+		--link: #5555ff;
+		--red: #ff0000;
+	}
+	#logo{
+		filter: invert(1);
+	}
+	.spacer{
+		padding-bottom: 70px !important;
+	}
+}
+
+::-webkit-scrollbar{
+	width: 4px;
+	height: 4px;
+	background: transparent;
+}
+::-webkit-scrollbar-thumb{
+	background: var(--accent);
+	border-radius: 4px;
+}
+
 #mainWrapper{
 	display: flex;
 	width: 100%;
@@ -25,11 +53,11 @@ main{
 @keyframes legalBarPreview {
 	0%{
 		height: 40px;
-		color: #dfdfdf;
+		color: var(--accent);
 	}
 	80%{
 		height: 40px;
-		color: #dfdfdf;
+		color: var(--accent);
 	}
 	100%{
 		height: 4px;
@@ -40,7 +68,7 @@ main{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #bb0909;
+	background-color: var(--red);
 	color: transparent;
 	height: 4px;
 	overflow: hidden;
@@ -69,7 +97,7 @@ h1,h2,h3{
 	padding-top: 100px;
 }
 h2{
-	font-size: 50px;
+	font-size: 40px;
 	letter-spacing: 2px;
 }
 h3{
@@ -77,19 +105,32 @@ h3{
 	font-size: 25px;
 	letter-spacing: 1px;
 }
-p{
+p, p a{
 	letter-spacing: 0px;
 	color: var(--accent);
 	font-style: normal;
 	font-size: 20px;
 	font-family: "DM Serif Text";
 	text-align: left;
+}
+p{
 	padding: 20px 10% 0px 10%;
+}
+a{
+	padding: 0px;
+	text-decoration: underline wavy;
+	text-decoration-color: var(--link);
 }
 
 /** elements */
 .spacer{
 	padding-bottom: 30px;
+}
+.divider{
+	width: 100%;
+	height: 0px;
+	padding: 0px;
+	border-bottom: solid 2px var(--bg-light);
 }
 .center{
 	width: 100%;
